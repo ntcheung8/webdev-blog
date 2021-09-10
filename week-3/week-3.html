@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+    <link rel="stylesheet" href="week-3.css">
+
+    <head>
+        <title>HTML Elements Reference</title>
+    </head>
+
+    <body>
+
+    <div id=description>
+    <h1>Week 3 Description</h1>
+    <p>This week I spent some time on <a href="https://www.w3schools.com/html/html_media.asp">W3Schools</a> (5 short sections) 
+    and learned about how to embed video and audio to html. 
+    Adding autoplay, fullscreen, controls and volume was much easier than I expected, since it was just an extra setting on the <tt>&lt;audio&gt;</tt> tag
+    Below is some sample code of how I added audio to this post.
+    </p>
+    <p>
+    The <tt>&lt;audio&gt;</tt> tag allows us to adjust features such as load, play, pause, duration and volume. In order to play audio after some event, you can use Document Object Model (DOM) events.
+    I have not learned any Javascript yet so maybe that can go on the future to-do list.
+    </p>
+
+    <p>
+    Interestingly, one article noted that Chromium browsers do not allow autoplay alone, but muted autoplay is permitted. 
+    </p>
+    <h2>Code Sample</h2>
+    <pre>
+    <code>
+    &lt;figure&gt;
+        &lt;h1&gt;MP3 Audio&lt;/h1&gt;
+        &lt;audio controls&gt;
+            &lt;source src="audio/music.wav" type="audio/wav"&gt;
+            Your browser does not support the audio element.
+        &lt;/audio&gt;
+    &lt;/figure&gt;
+    </code>
+    </pre>
+
+
+
+
+
+    
+    </div>
+
+    <div id="figures"> 
+    <figure>
+        <h1>MP4 Video</h1>
+        <video autopictureinpicture controls>
+            <source src="videos/ultrasonic_attempt3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </figure>
+
+    <figure>
+        <h1>Autoplay</h1>
+        <video autoplay muted loop>
+            <source src="videos/ultrasonic_attempt3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </figure>
+
+    <figure>
+        <h1>YouTube Video</h1>
+        <iframe allow="fullscreen" src="https://www.youtube.com/embed/nL34zDTPkcs"></iframe>
+    </figure>
+
+    <figure>
+        <h1>MP3 Audio</h1>
+        <audio controls>
+            <source src="audio/music.wav" type="audio/wav">
+            Your browser does not support the audio element.
+        </audio>
+    </figure>
+    </div>
+
+
+    </body>
+
+    <footer>
+    <div id="footer">
+        <a href="../index.html"> Home </a>
+    </div>
+    </footer>
+</html>

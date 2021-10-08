@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="week-5.css">
+
+<head>
+    
+</head>
+
+<body>
+
+    <div id="description">
+        <h1>Animation in CSS</h1>
+        <h2>October 7, 2021</h2>
+        <h3>Description</h3>
+        <p>Today I spent some time on <a href="https://thoughtbot.com/blog/css-animation-for-beginners">thoughtbot.com</a> to learn how to do basic animation in CSS. 
+            <b>Keyframes</b> are the stages and styles of animation and <b>animation properties</b> assign keyframes to CSS elements.
+            Here are a few things keyframes are composed of:
+            <ul>
+                <li><b>Name of animation</b></li>
+                <li><b>Stages of the animation</b></li>
+                <li><b>CSS Properties</b></li>
+            </ul>
+            Here are a couple things animation properties do:
+            <ul>
+                <li>Assigns keyframes to elements to animate</li>
+                <li>Defines how it's animation</li>
+            </ul>
+            And these two animation properties are required:
+            <ul>
+                <li><b>animation-name</b>: defined in keyframes</li>
+                <li><b>animation-duration</b>: duration in seconds (s) or milliseconds (ms)</li>
+            </ul>
+            Using these techniques we can make a few simple animations.
+        <div class="bounce-in"><p class="sample-text">Here's a basic bounce in animation.</p></div>
+        <div class="sample"><div class="bounce-in-bg"><p class="sample-text">slooow</p></div></div>
+            There are also some neat shortcuts we can use. 
+            The below code shows an example of using the shorthand animation syntax.
+        </p>
+        <h3>Code</h3>
+        <pre>
+            <code>
+    .bounce-in-repeat {
+        height: 25vh;
+        width: 20vw;
+        text-align: center;
+        background-color: aquamarine;
+        animation:  bounceIn 1s ease-in-out 3s infinite;
+        }
+            </code>
+        </pre>
+        <h3>Output</h3>
+        <div class="sample"><div class="bounce-in-repeat"><p class="sample-text">fast non-stop</p></div></div>
+
+    </div>
+
+</body>
+
+<footer>
+    <div id="footer">
+        <a href="../index.html"> Home </a>
+    </div>
+</footer>
+
+</html>

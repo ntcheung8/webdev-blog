@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<link rel="stylesheet" href="week-5.css">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>A Basic HTML5 Template</title>
+  <meta name="description" content="Rotating Cube">
+  <meta name="author" content="Nicholas Cheung">
+
+  <meta property="og:title" content="Blog Post For October 15, 2021">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="blog.nickc.me/week-6">
+  <meta property="og:description" content="Rotating cube">
+
+  <link rel="stylesheet" href="week-6.css">
+
+</head>
+
+<body>
+
+  <div id="description">
+    <h1>Rotating Cube</h1>
+    <h2>October 15, 2021</h2>
+    <h3>Description</h3>
+    <p> This week I learned about creating a rotating cube on <a
+        href="https://3dtransforms.desandro.com/cube">3dtransforms.desandro.com</a>.
+      It was great to see how many of the basic principles I have learned could be applied to this more advanced
+      animation.
+      Although this is a little off topic, I learned how useful sites like <a
+        href="https://coolors.co/palettes/trending/green">coolers.co</a> are for designing nice things.
+      The way the position attribute is used was particularly cool to see, especially in a 3D object. 
+      An important note about the CSS, <b>transform-style</b> sets whether children of an element are in 2D (flat on screen) or 3D spaace.
+    </p>
+    <p>
+      One topic the article explored was un-fuzzing 3D transformed text. It turns out the 3D transforms can mess up text rendering. 
+      The fonts still have their old anti aliasing applied, and in order to fix this we move the 3D object inwards.
+      This rotating cube was fun to learn about, especially because of how smooth the animations and transitions are!
+
+    <div class="scene">
+      <div class="cube">
+        <div class="cube__face cube__face--front">FRONT</div>
+        <div class="cube__face cube__face--back">BACK</div>
+        <div class="cube__face cube__face--right">RIGHT</div>
+        <div class="cube__face cube__face--left">LEFT</div>
+        <div class="cube__face cube__face--top">TOP</div>
+        <div class="cube__face cube__face--bottom">BOTTOM</div>
+      </div>
+    </div>
+    <p class="radio-group">
+      <label>
+        <input type="radio" name="rotate-cube-side" value="front" checked /> FRONT
+      </label>
+      <label>
+        <input type="radio" name="rotate-cube-side" value="right" /> RIGHT
+      </label>
+      <label>
+        <input type="radio" name="rotate-cube-side" value="back" /> BACK
+      </label>
+      <label>
+        <input type="radio" name="rotate-cube-side" value="left" /> LEFT
+      </label>
+      <label>
+        <input type="radio" name="rotate-cube-side" value="top" /> TOP
+      </label>
+      <label>
+        <input type="radio" name="rotate-cube-side" value="bottom" /> BOTTOM
+      </label>
+      <label>
+        <input type="radio" name="rotate-cube-side" value="off" /> FUNKY!
+      </label>
+    </p>
+    </p>
+
+    <h3>Code</h3>
+    <pre>
+            <code>
+      .cube {
+        width: 200px;
+        height: 200px;
+        position: relative;
+        transform-style: preserve-3d;
+        transform: translateZ(-100px);
+        transition: transform 1s;
+      }
+            </code>
+        </pre>
+
+  </div>
+  <script src="week-6.js"></script>
+</body>
+
+<footer>
+  <div id="footer">
+    <a href="../index.html"> Home </a>
+  </div>
+</footer>
+
+</html>

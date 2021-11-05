@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>A Basic HTML5 Template</title>
+  <meta name="description" content="Scrolling Effects">
+  <meta name="author" content="Nicholas Cheung">
+
+  <meta property="og:title" content="Blog Post For November 5, 2021">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="blog.nickc.me/week-7">
+  <meta property="og:description" content="Rotating cube">
+
+  <link rel="stylesheet" href="week-7.css">
+
+</head>
+
+<body>
+
+  <div id="description">
+    <h1>Scrolling Effects</h1>
+    <h2>November 5, 2021</h2>
+    <h3>Description</h3>
+    <p> This week I learned about scrolling effects on <a
+        href="https://www.w3schools.com/howto/howto_css_smooth_scroll.asp" target="_blank">w3schools</a>. 
+      Since smooth scrolling alone is simple, I also looked into some of the other tricks we can do with scrolling, like drawing and creating background gradients.
+      The idea to look into scroll effects came from <a href="https://www.apple.com/iphone-13-pro/" target="_blank">apple</a>, since scrolling animations are all over their website.
+      Although, some of those animations might be a little too complicated for me right now.
+      Sites like <a href="https://freefrontend.com/css-scroll-effects/" target="_blank">freefrontend</a> list many ways cool scrolling effects can be implemented.
+      Maybe for my next site I should take inspiration from it.
+    </p>
+    <p>
+      Here is an example of a triangle drawn by scrolling down. 
+      I liked the idea of showing the initial triangle before scrolling starts.
+    </p>
+    <svg id="mySVG">
+      <path fill="none" stroke="red" stroke-width="8" id="triangle" d="M150 0 L75 200 L225 200 Z"/>
+    </svg>
+
+    <p>Below is an example of smooth scrolling on a page. </p>
+
+    <div class="main" id="section1">
+      <a href="#section2">Section 2</a>
+    </div>
+    
+    <div class="main" id="section2">
+      <a href="#section1">Section 1</a>
+    </div>
+
+    <h3>Code for Smooth Scroll</h3>
+    <pre>
+            <code>
+  html {
+    scroll-behavior: smooth;
+  }
+
+            </code>
+    </pre>
+    <h3>Some Code for Drawing Triangle</h3>
+    <pre>
+      <code>
+  function myFunction() {
+    var scrollpercent = (document.body.scrollTop 
+      + document.documentElement.scrollTop) 
+      / (document.documentElement.scrollHeight 
+      - document.documentElement.clientHeight);
+    var draw = length * scrollpercent;
+    triangle.style.strokeDashoffset = length - draw;
+  }
+            </code>
+    </pre>
+
+  </div>
+  
+
+
+  <script src="week-7.js"></script>
+  
+</body>
+
+<footer>
+  <div id="footer">
+    <a href="../index.html"> Home </a>
+  </div>
+</footer>
+
+</html>

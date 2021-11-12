@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>A Basic HTML5 Template</title>
+  <meta name="description" content="Scrolling Effects">
+  <meta name="author" content="Nicholas Cheung">
+
+  <meta property="og:title" content="Blog Post For November 12, 2021">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="blog.nickc.me/week-8">
+  <meta property="og:description" content="Rotating cube">
+
+  <link rel="stylesheet" href="week-8.css">
+
+</head>
+
+<body>
+
+  <div id="description">
+    <h1>Snackbars</h1>
+    <h2>November 12, 2021</h2>
+    <h3>Description</h3>
+    <p> This week I learned about snackbars on <a
+        href="https://www.w3schools.com/howto/howto_js_snackbar.asp" target="_blank">w3schools</a>.
+        I also took a look at <a href="https://vigu-madurai.medium.com/snack-bar-toast-menu-b70f3de888a" target="_blank">vigumadurai's blog</a> post which explains a few uses for snackbars.
+        I have seen sites have these popup style notifications, but it's nice to see this clean implementation of these snackbars.
+        Snackbars are used as tooltips or error messages, and the example I have shown below is a simple button to make the snackbar appear. 
+        Additionally, I found a neat site at <a href="https://material.io/archive/guidelines/components/snackbars-toasts.html#snackbars-toasts-usage" target="_blank">materials.io</a> that describes some of the proper methods of designing snackbars. 
+        For example, icon's should <b>not</b> be inside snackbars and should have at most <b>one</b> button.
+    </p>
+    
+    <button onclick="myFunction()">I'm hungry!</button>
+    
+    <div id="snackbar">This snackbar is not edible.</div>
+
+    <h3>Fading CSS for Snackbars</h3>
+    <pre>
+            <code>
+  @-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+            </code>
+    </pre>
+
+    <h3>Javascript for Snackbars</h3>
+    <pre>
+            <code>
+  function myFunction() {
+    var snack = document.getElementById("snackbar");
+    snack.className = "show";
+    setTimeout(function(){ snack.className = snack.className.replace("show", ""); }, 3000);
+  }
+            </code>
+    </pre>
+
+  </div>
+  
+
+
+  <script src="week-8.js"></script>
+  
+</body>
+
+<footer>
+  <div id="footer">
+    <a href="../index.html"> Home </a>
+  </div>
+</footer>
+
+</html>

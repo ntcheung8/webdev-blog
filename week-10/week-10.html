@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Dec. 2</title>
+  <meta name="description" content="Google Maps">
+  <meta name="author" content="Nicholas Cheung">
+
+  <meta property="og:title" content="Blog Post For November 19, 2021">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="blog.nickc.me/week-10">
+  <meta property="og:description" content="Displaying google maps with marker.">
+
+  <link rel="stylesheet" href="week-10.css">
+
+</head>
+
+<body>
+
+  <div id="description">
+    <h1>JS Google Chart</h1>
+    <h2>December 2, 2021</h2>
+    <h3>Description</h3>
+    <p> This week I learned about adding Google Chart graphs on <a href="https://www.w3schools.com/js/js_graphics_google_chart.asp">w3schools</a>.
+      Learning this would allow me to create scatter charts, line charts, bar / column charts, area charts, pie charts, and more. 
+      I really like how simple the implementation for these graphs are, it's just a div in the html and the javascript code below.
+      I also learned about some other javascript graphing techniques, like <a href="https://www.w3schools.com/js/js_graphics_plotly.asp">plotly</a> and <a href="https://www.w3schools.com/js/js_graphics_chartjs.asp">chart.js</a>.
+      Although, I think they serve basically the same purpose. 
+    </p>
+    
+    <p>Below is an example of a Google Chart implementation with some random sample data.</p>
+
+    <div id="myChart" style="width:100%; max-width:600px; height:500px;"></div>
+
+    <script
+src="https://www.gstatic.com/charts/loader.js">
+</script>
+    <script>
+      google.charts.load('current',{packages:['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      
+      function drawChart() {
+      // Set Data
+      var data = google.visualization.arrayToDataTable([
+        ['Price', 'Size'],
+        [50,7],[60,8],[70,8],[80,9],[90,9],
+        [100,9],[110,10],[120,11],
+        [130,14],[140,14],[150,15]
+      ]);
+      // Set Options
+      var options = {
+        title: 'House Prices vs. Size',
+        hAxis: {title: 'Square Meters'},
+        vAxis: {title: 'Price in Millions'},
+        legend: 'none'
+      };
+      // Draw
+      var chart = new google.visualization.LineChart(document.getElementById('myChart'));
+      chart.draw(data, options);
+      }
+      </script>
+  <script src="week-10.js"></script>
+
+
+  <h3>Javascript for Google Charts</h3>
+  <pre>
+          <code>
+  google.charts.load('current',{packages:['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
+  
+  function drawChart() {
+  // Set Data
+  var data = google.visualization.arrayToDataTable([
+    ['Price', 'Size'],
+    [50,7],[60,8],[70,8],[80,9],[90,9],
+    [100,9],[110,10],[120,11],
+    [130,14],[140,14],[150,15]
+  ]);
+  // Set Options
+  var options = {
+    title: 'House Prices vs. Size',
+    hAxis: {title: 'Square Meters'},
+    vAxis: {title: 'Price in Millions'},
+    legend: 'none'
+  };
+  // Draw
+  var chart = new google.visualization.LineChart(document.getElementById('myChart'));
+  chart.draw(data, options);
+  }
+          </code>
+  </pre>
+
+
+</body>
+
+
+
+<footer>
+  <div id="footer">
+    <a href="../index.html"> Home </a>
+  </div>
+</footer>
+
+</html>
